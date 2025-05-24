@@ -11,8 +11,15 @@ class HabitDetailScreen extends StatefulWidget {
 }
 
 class _HabitDetailScreenState extends State<HabitDetailScreen> {
-  double frequency = 3;
-  bool remindersOn = false;
+  late double frequency;
+  late bool remindersOn;
+
+  @override
+  void initState() {
+  super.initState();
+  frequency = widget.habit.frequencyPerWeek;
+  remindersOn = widget.habit.remindersOn;
+  }
 
   Color getSliderColor() {
     switch (widget.habit.name.toLowerCase()) {
@@ -124,7 +131,10 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                    onPressed: () {
+                   onPressed: () {
+                      widget.habit.frequencyPerWeek = frequency;
+                      widget.habit.remindersOn = remindersOn;
+
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text("Configurações salvas!")),
                       );
