@@ -32,11 +32,31 @@ class HabitListScreen extends StatefulWidget {
 
 class _HabitListScreenState extends State<HabitListScreen> {
   List<Habit> habits = [
-    Habit(name: "Beber água", description: "Beber 8 copos de água por dia.", icon: Icons.water_drop),
-    Habit(name: "Ler", description: "Ler por pelo menos 30 minutos.", icon: Icons.book),
-    Habit(name: "Caminhar", description: "Caminhar 30 minutos por dia.", icon: Icons.directions_walk),
-    Habit(name: "Estudar", description: "Estudar uma hora por dia.", icon: Icons.school),
-    Habit(name: "Meditar", description: "Meditar por 10 minutos diariamente.", icon: Icons.self_improvement),
+    Habit(
+      name: "Beber água",
+      description: "O objetivo é beber pelo menos 8 copos de água ao longo do dia, distribuindo a ingestão entre Manhã, Tarde e Noite para garantir o bom funcionamento do corpo.",
+      icon: Icons.water_drop,
+    ),
+    Habit(
+      name: "Ler",
+      description: "Reserve um tempo para o seu desenvolvimento pessoal e relaxamento. Leia por pelo menos 30 minutos diariamente, seja um livro, artigo ou revista de sua preferência.",
+      icon: Icons.book,
+    ),
+    Habit(
+      name: "Caminhar",
+      description: "Cuide da sua saúde física e mental caminhando por 30 minutos todos os dias. Caminhadas ao ar livre ajudam a aliviar o estresse e melhoram a disposição.",
+      icon: Icons.directions_walk,
+    ),
+    Habit(
+      name: "Estudar",
+      description: "Dedique pelo menos uma hora do seu dia aos estudos. Pode ser para aprender algo novo, revisar conteúdos ou aprimorar habilidades profissionais e pessoais.",
+      icon: Icons.school,
+    ),
+    Habit(
+      name: "Meditar",
+      description: "Encontre um momento de paz e autoconhecimento. Medite por 10 minutos diariamente para reduzir a ansiedade, melhorar o foco e promover o bem-estar.",
+      icon: Icons.self_improvement,
+    ),
   ];
 
   @override
