@@ -11,8 +11,15 @@ class HabitDetailScreen extends StatefulWidget {
 }
 
 class _HabitDetailScreenState extends State<HabitDetailScreen> {
-  double frequency = 3;
-  bool remindersOn = false;
+  late double frequency;
+  late bool remindersOn;
+
+  @override
+  void initState() {
+  super.initState();
+  frequency = widget.habit.frequencyPerWeek;
+  remindersOn = widget.habit.remindersOn;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +63,9 @@ class _HabitDetailScreenState extends State<HabitDetailScreen> {
             Center(
               child: ElevatedButton(
                 onPressed: () {
+                  widget.habit.frequencyPerWeek = frequency;
+                  widget.habit.remindersOn = remindersOn;
+
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text("Configurações salvas!")),
                   );
